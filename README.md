@@ -18,9 +18,26 @@
   - BGM, SE 再生
 
 
+## 動かし方
+```
+git clone
+```
+
+```
+cargo run
+```
+
+デバッグビルドだと bgm がブツ切れになったりするので、ちゃんと動かすときは
+```
+cargo run --release
+```
+でリリースビルドする。
+
+
 ## 効果音
 
   - [効果音ラボ 様](https://soundeffect-lab.info/sound/anime/)
+
 
 ## BGM
 
