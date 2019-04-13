@@ -1,28 +1,40 @@
 extern crate cgmath;
 extern crate ggez;
 
-use ggez::event;
-use ggez::event::KeyCode;
-use ggez::event::KeyMods;
+use ggez::{
+    Context,
+    GameResult,
+    graphics,
+    audio::{
+        self,
+        SoundSource,
+    },
+    event::{
+        self,
+        KeyCode,
+        KeyMods,
+    },
+};
 
-use ggez::graphics;
-use ggez::{Context, GameResult};
-use std::env;
-use std::path;
-
-use ggez::audio;
-use ggez::audio::SoundSource;
+use std::{
+    env,
+    path,
+};
 
 struct MainState {
+    // プレイヤーの画像
     image: graphics::Image,
 
-    bgm: audio::Source,
-    se: audio::Source,
-
+    // プレイヤーの情報
     x: f32,
     y: f32,
     speed: f32,
 
+    // bgm, se
+    bgm: audio::Source,
+    se: audio::Source,
+
+    // キー入力からの操作系
     up_pressing: bool,
     right_pressing: bool,
     down_pressing: bool,
@@ -36,19 +48,25 @@ impl MainState {
         let image = graphics::Image::new(ctx, "/stand01.png")?;
         let bgm = audio::Source::new(ctx, "/juvenile.mp3")?;
         let se = audio::Source::new(ctx, "/hyoushigi1.mp3")?;
-        Ok(MainState{
-            image,
-            bgm,
-            se,
-            x: 100.0,
-            y: 100.0,
-            speed: 3.0,
-            up_pressing: false,
-            right_pressing: false,
-            down_pressing: false,
-            left_pressing: false,
-            space_pressed: false,
-        })
+
+        Ok(
+            MainState{
+                image,
+
+                x: 100.0,
+                y: 100.0,
+                speed: 8.0,
+
+                bgm,
+                se,
+
+                up_pressing: false,
+                right_pressing: false,
+                down_pressing: false,
+                left_pressing: false,
+                space_pressed: false,
+            }
+        )
     }
 
 }

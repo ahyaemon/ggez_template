@@ -21,3 +21,7 @@
 ## 効果音
 
   - [効果音ラボ 様](https://soundeffect-lab.info/sound/anime/)
+
+## BGM
+
+  - 自作
