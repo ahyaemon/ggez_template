@@ -1,6 +1,3 @@
-extern crate cgmath;
-extern crate ggez;
-
 use ggez::{
     Context,
     GameResult,
